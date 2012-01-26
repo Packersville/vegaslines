@@ -6,10 +6,12 @@
     <tr>
       <th>Season</th>
     </tr>
-  <% @years.each do |year| %>
-    <tr class="clickable-row" onclick="location.href='<%= year_weeks_path(year.id) %>'">
-      <td><%= year.year %></td>
-    </tr>
+  <% if @years != nil %>
+    <% @years.each do |year| %>
+      <tr class="clickable-row" onclick="location.href='<%= year_weeks_path(year.id) %>'">
+	<td><%= link_to "#{year.year}", year_weeks_path(year.id)  %></td>
+      </tr>
+    <% end %>
   <% end %>
   </table>
 </div>

@@ -1,0 +1,11 @@
+<h1> Year Creation </h1>
+
+<%= form_for @year do |f| %>
+  <div class="field">
+    <%= f.label :year %>:<br />
+    <%= f.text_field :year %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
