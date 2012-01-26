@@ -1,0 +1,12 @@
+<h1> <%= @year.year %> Season </h1>
+
+<div id="weeks">
+  <table class="table_list">
+    <% @weeks.each do |week| %>
+      <tr>
+	<td>Week <%= week.week %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+</div>

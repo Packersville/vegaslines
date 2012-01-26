@@ -8,7 +8,6 @@ class YearsController < ApplicationController
   def create
     @year = Year.new(params[:year])
     @year.save
-    redirect_to 'index'
   end
   
   def new
