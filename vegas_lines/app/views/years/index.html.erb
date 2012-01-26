@@ -1,0 +1,17 @@
+<h1> Year Index </h1>
+<hr />
+
+<div id="years">
+  <table class="table_list">
+    <tr>
+      <th>Season</th>
+    </tr>
+  <% @years.each do |year| %>
+    <tr>
+      <td><%= year.year %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+  <%= link_to 'New Season', new_year_path %>
+</div>
