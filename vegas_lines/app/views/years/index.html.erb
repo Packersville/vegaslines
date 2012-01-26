@@ -7,7 +7,7 @@
       <th>Season</th>
     </tr>
   <% @years.each do |year| %>
-    <tr>
+    <tr class="clickable-row" onclick="location.href='<%= year_weeks_path(year.id) %>'">
       <td><%= year.year %></td>
     </tr>
   <% end %>

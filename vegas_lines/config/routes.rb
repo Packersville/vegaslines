@@ -4,7 +4,9 @@ VegasLines::Application.routes.draw do
   end
   
   resources :users, :only => :show
-  resources :years
+  resources :years do
+    resources :weeks
+  end
   
   root :to => "devise/sessions#new"
 end
