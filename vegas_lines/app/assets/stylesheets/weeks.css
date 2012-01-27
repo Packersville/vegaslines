@@ -1,0 +1,14 @@
+
+.datepicker{
+  width:90px;
+}
+.timepicker{
+  width:90px;
+}
+#edit_game_header{
+  text-align:center;
+}
+#game_edit_table{
+  margin-left: auto;
+  margin-right: auto;
+}

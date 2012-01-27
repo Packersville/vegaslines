@@ -4,7 +4,7 @@
   <table class="table_list">
     <% @weeks.each do |week| %>
       <tr>
-	<td><%= link_to "Week #{week.week}", week_games_path(week.id) %> </td>
+	<td><%= link_to "Week #{week.week}", edit_year_week_path(@year.id, week.id) %> </td>
       </tr>
     <% end %>
   </table>

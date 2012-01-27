@@ -1,0 +1,13 @@
+<tr>
+  <td><%= f.label :game, "Game #{f.object.index}", :class => 'game_label' %></td>
+
+  <td><%= f.select :away_team_id, options_from_collection_for_select(@teams, :id, :name, f.object.away_team_id), {:include_blank => 'Please Select'}%></td> 
+    
+  <td>vs.</td>
+
+  <td><%= f.select :home_team_id, options_from_collection_for_select(@teams, :id, :name, f.object.home_team_id), {:include_blank => 'Please Select'}%></td>
+
+  <td><%= f.text_field :date, :class => 'datepicker' %></td>
+
+  <td><%= f.text_field :time, :class => 'timepicker' %></td>
+</tr>
