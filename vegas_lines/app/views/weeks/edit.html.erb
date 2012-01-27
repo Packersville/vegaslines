@@ -1,6 +1,6 @@
 <h1 id='edit_game_header'> Week <%= @week.week %> Games </h1>
 
-<%= form_for [@year, @week], :url => year_week_path(@year.id, params[:id]), :method => :put do |f| %>
+<%= form_for [@year, @week] do |f| %>
   <%= f.error_messages %>
   <table id='game_edit_table'>
     <tr>

@@ -11,6 +11,11 @@
 //= require_tree .
 
 $(document).ready(function() {
+  $rows = $('.field_with_errors').closest('tr'); 
+  $rows.find('td').css({'border': '1px solid red', 'border-left': 'none', 'border-right': 'none'}); 
+  $rows.find('td:first').css('border-left', '1px solid red'); 
+  $rows.find('td:last').css('border-right', '1px solid red');
+  
   $(".clickable-row").hover(
     function() {
       $(this).children().css('background', '#eaf4fd');

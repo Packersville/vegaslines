@@ -1,6 +1,6 @@
 class Year < ActiveRecord::Base
   has_many :weeks
-  after_save :create_weeks
+  after_create :create_weeks
   
   validates_uniqueness_of :year
   protected
