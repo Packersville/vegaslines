@@ -3,4 +3,4 @@
 <% if current_user.admin == true %>
   <%= link_to "Year Index", years_path %></br>
 <% end %>
-<%= link_to "Lines Index", year_weeks_path(@get_current_year) %>
+<%= link_to "Lines Index", year_weeks_path(get_year_id(@get_current_year)) %>
