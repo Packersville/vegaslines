@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     user_path(current_user.id)
   end
   
+  protected
   def get_current_year
     @get_current_year = Date.today.year
   end

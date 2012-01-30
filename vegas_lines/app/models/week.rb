@@ -1,6 +1,7 @@
 class Week < ActiveRecord::Base
   belongs_to :year
   has_many :games
+  has_many :lines
   after_create :create_games
   accepts_nested_attributes_for :games, :allow_destroy => true 
   

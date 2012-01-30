@@ -1,0 +1,15 @@
+<h1> <%= "Week #{@week.id} Lines" %> </h1>
+
+<%= form_for @lines, :url => week_line_path(params[:id]), :method => :put do |f| %>
+  <table>
+  <% @games.each_with_index do |game, index| %>
+    <tr>
+    <td><%= label_tag :game, "Game #{game.index}", :class => 'game_label' %></td>
+    <td><%= get_team_name(game.away_team_id) %></td>
+    <td> vs. </td>
+    <td><%= get_team_name(game.home_team_id) %></td>
+    <td><%= f.text_field "game#{index+1}".to_sym %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>

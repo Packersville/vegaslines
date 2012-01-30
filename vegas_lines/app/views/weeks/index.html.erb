@@ -7,6 +7,12 @@
 	<td><%= link_to "Week #{week.week}", edit_year_week_path(@year.id, week.id) %> </td>
       </tr>
     <% end %>
+    <% @weeks.each do |week| %>
+      <% p week.lines %>
+      <tr>
+	<td><%= link_to "Week #{week.week} Lines", edit_week_line_path(week.id, week.lines) %>
+      </tr>
+    <% end %>
   </table>
 </div>
 <%= link_to "Year Index", years_path %>
