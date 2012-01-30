@@ -16,4 +16,12 @@
   border: solid 1px black;
   margin-top: 20px;
 }
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
+.links{
+  padding-top:20px;
+}
+
 
