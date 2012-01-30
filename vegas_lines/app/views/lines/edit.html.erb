@@ -1,15 +1,23 @@
-<h1> <%= "Week #{@week.id} Lines" %> </h1>
+<h1 id='lines_header'> <%= "Week #{@week.id} Lines" %> </h1>
 
-<%= form_for @lines, :url => week_line_path(params[:id]), :method => :put do |f| %>
-  <table>
+<%= form_for @lines, :url => week_line_path(@week,params[:id]), :method => :put do |f| %>
+  <table id='lines_edit_table'>
+    <tr>
+      <td></td>
+      <td>Away</td>
+      <td></td>
+      <td>Home</td>
+      <td>Spread</td>
+    </tr>
   <% @games.each_with_index do |game, index| %>
     <tr>
-    <td><%= label_tag :game, "Game #{game.index}", :class => 'game_label' %></td>
-    <td><%= get_team_name(game.away_team_id) %></td>
-    <td> vs. </td>
-    <td><%= get_team_name(game.home_team_id) %></td>
-    <td><%= f.text_field "game#{index+1}".to_sym %></td>
+      <td><%= label_tag :game, "Game #{game.index}", :class => 'game_label' %></td>
+      <td class='away_team'><%= get_team_name(game.away_team_id) %></td>
+      <td class='vs_label'> vs. </td>
+      <td class='home_team'><%= get_team_name(game.home_team_id) %></td>
+      <td><%= f.text_field "game#{index+1}".to_sym, :class => 'spread_field' %></td>
     </tr>
   <% end %>
   </table>
+  <%= f.submit %>
 <% end %>
