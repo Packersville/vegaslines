@@ -15,5 +15,5 @@
       <%= render "game_fields", :f => f2 %>
     <% end %>
   </table>
-  <%= f.submit %>
+  <%= f.submit %> | <%= link_to "Week Index", year_weeks_path(@year, @week) %>
 <% end %>
