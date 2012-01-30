@@ -1,14 +1,18 @@
 <h1> <%= @year.year %> Season </h1>
 
 <div id="weeks">
-  <table class="table_list">
-    <% @weeks.each do |week| %>
-      <tr>
-	<td><%= link_to "Week #{week.week}", edit_year_week_path(@year.id, week.id) %> </td>
-      </tr>
+  <table id="creating_games_week_table">
+    <% if current_user.admin == true %>
+      <button id='button_show_admin_weeks' type="button">Show Admin Weeks</button>
+      <% @weeks.each do |week| %>
+	<tr>
+	  <td><%= link_to "Week #{week.week}", edit_year_week_path(@year.id, week.id), :class => "creating_games_week_link" %> </td>
+	</tr>
+      <% end %>
     <% end %>
+  </table>
+  <table>
     <% @weeks.each do |week| %>
-      <% p week.lines %>
       <tr>
 	<td><%= link_to "Week #{week.week} Lines", edit_week_line_path(week.id, week.lines) %>
       </tr>
