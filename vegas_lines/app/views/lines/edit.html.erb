@@ -20,6 +20,6 @@
   <% end %>
   </table>
   <div class="actions">
-   <%= link_to "Week Index", year_weeks_path(@get_current_year)%> | <%= f.submit %>
+   <%= link_to "Week Index", year_weeks_path(get_year_id(@get_current_year))%> | <%= f.submit %>
   </div>
 <% end %>
