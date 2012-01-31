@@ -2,9 +2,11 @@ class UsersController < ApplicationController
   before_filter :get_current_year
   
   def show
+    year_count = Year.all.count
+    if year_count == 0
+      redirect_to years_path
+    end
     @user = User.find(current_user.id)
-    year = Year.where("year = #{@get_current_year}").first
-    weeks = year.weeks
     find_user_lines(weeks)
   end
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130195531) do
+ActiveRecord::Schema.define(:version => 20120131153238) do
 
   create_table "games", :force => true do |t|
     t.integer  "week_id"
@@ -78,12 +78,14 @@ ActiveRecord::Schema.define(:version => 20120130195531) do
     t.integer  "week"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "start_date"
   end
 
   create_table "years", :force => true do |t|
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "start_date"
   end
 
   add_index "years", ["year"], :name => "index_years_on_year"
