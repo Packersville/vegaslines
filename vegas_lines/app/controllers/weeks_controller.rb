@@ -3,7 +3,6 @@ class WeeksController < ApplicationController
   def index
     @year = Year.find(params[:year_id])
     @weeks = @year.weeks
-    find_user_lines(@weeks)
   end
   
   def edit
@@ -23,19 +22,6 @@ class WeeksController < ApplicationController
       redirect_to edit_year_week_path(@year.id, @week)
     else
       render 'edit'
-    end
-  end
-  
-  protected
-  def find_user_lines(weeks)
-    lines = Line.where("user_id = #{current_user.id}") 
-    if lines == []
-      weeks.each do |week|
-	line = Line.new
-	line.user_id = current_user.id
-	line.week_id = week.id
-	line.save
-      end
     end
   end
 end

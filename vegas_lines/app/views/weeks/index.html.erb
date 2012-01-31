@@ -14,7 +14,7 @@
   <table>
     <% @weeks.each do |week| %>
       <tr>
-	<td><%= link_to "Week #{week.week} Lines", edit_week_line_path(week.id, week.lines) %>
+	<td><%= link_to "Week #{week.week} Lines", edit_week_line_path(week, get_week_lines_id(week, current_user)) %>
       </tr>
     <% end %>
   </table>
