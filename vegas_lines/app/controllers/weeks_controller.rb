@@ -3,6 +3,7 @@ class WeeksController < ApplicationController
   def index
     @year = Year.find(params[:year_id])
     @weeks = @year.weeks
+    @weeks_for_lines = @year.weeks.where("start_date <= '#{(Date.today+50)}'")
   end
   
   def edit

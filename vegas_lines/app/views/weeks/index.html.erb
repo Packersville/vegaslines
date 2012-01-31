@@ -12,7 +12,7 @@
     <% end %>
   </table>
   <table>
-    <% @weeks.each do |week| %>
+    <% @weeks_for_lines.each do |week| %>
       <tr>
 	<td><%= link_to "Week #{week.week} Lines", edit_week_line_path(week, get_week_lines_id(week, current_user)) %>
       </tr>
