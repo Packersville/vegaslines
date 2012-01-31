@@ -9,11 +9,13 @@ class Week < ActiveRecord::Base
   
   protected
   def create_games
-    16.times {self.games.build}
-    games.each_with_index do |game, index|
-      game.index = index+1
+    if self.id != 1
+      16.times {self.games.build}
+      games.each_with_index do |game, index|
+	game.index = index+1
+      end
+      self.games.each(&:save!)
     end
-    self.games.each(&:save!)
   end
   
  def saved_games_unique
