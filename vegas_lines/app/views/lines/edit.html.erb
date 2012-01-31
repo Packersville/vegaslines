@@ -7,7 +7,8 @@
       <td>Away</td>
       <td></td>
       <td>Home</td>
-      <td>Spread</td>
+      <td class='time'>Time</td>
+      <td class='spread_td'>Spread</td>
     </tr>
   <% @games.each_with_index do |game, index| %>
     <tr>
@@ -15,7 +16,8 @@
       <td class='away_team'><%= get_team_name(game.away_team_id) %></td>
       <td class='vs_label'> vs. </td>
       <td class='home_team'><%= get_team_name(game.home_team_id) %></td>
-      <td><%= f.text_field "game#{index+1}".to_sym, :class => 'spread_field' %></td>
+      <td class='time'><%= Time.parse(game.time).strftime("%l:%M %p") %></td>
+      <td class='spread_td'><%= f.text_field "game#{index+1}".to_sym, :class => 'spread_field' %></td>
     </tr>
   <% end %>
   </table>
