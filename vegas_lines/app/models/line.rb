@@ -2,14 +2,24 @@ class Line < ActiveRecord::Base
   belongs_to :week
   belongs_to :user
   
+  validate :numericality_of_games
   validate :spread_valid
   
   def spread_valid
-    reg = /\d{1,2}(\.5)?/
+    reg = /\A-?\d{0,2}(\.5)?\Z/
     (1..16).each do |g|
       game = (self.send("game#{g}")).to_s
       if (game.match(reg)? true : false) == false && game.empty? == false
-	self.errors.add(:base, "Invalid line submitted.")
+	errors.add("game#{g}".to_sym, "has invalid spread.")
+      end
+    end
+  end
+  
+  def numericality_of_games
+    (1..16).each do |line|
+      p self.send("game#{line}")
+      if self.send("game#{line}").nil? == false && self.send("game#{line}").empty? == false
+	validates_numericality_of "game#{line}".to_sym
       end
     end
   end

@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 	line.user_id = current_user.id
 	line.week_id = week.id
 	line.save
-	#p line.errors.full_messages
       end
     end
   end

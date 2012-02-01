@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131153238) do
+ActiveRecord::Schema.define(:version => 20120201202557) do
 
   create_table "games", :force => true do |t|
     t.integer  "week_id"
@@ -27,22 +27,22 @@ ActiveRecord::Schema.define(:version => 20120131153238) do
   create_table "lines", :force => true do |t|
     t.integer  "user_id"
     t.integer  "week_id"
-    t.integer  "game1"
-    t.integer  "game2"
-    t.integer  "game3"
-    t.integer  "game4"
-    t.integer  "game5"
-    t.integer  "game6"
-    t.integer  "game7"
-    t.integer  "game8"
-    t.integer  "game9"
-    t.integer  "game10"
-    t.integer  "game11"
-    t.integer  "game12"
-    t.integer  "game13"
-    t.integer  "game14"
-    t.integer  "game15"
-    t.integer  "game16"
+    t.string   "game1"
+    t.string   "game2"
+    t.string   "game3"
+    t.string   "game4"
+    t.string   "game5"
+    t.string   "game6"
+    t.string   "game7"
+    t.string   "game8"
+    t.string   "game9"
+    t.string   "game10"
+    t.string   "game11"
+    t.string   "game12"
+    t.string   "game13"
+    t.string   "game14"
+    t.string   "game15"
+    t.string   "game16"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
