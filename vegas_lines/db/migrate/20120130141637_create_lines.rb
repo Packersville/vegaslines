@@ -3,22 +3,22 @@ class CreateLines < ActiveRecord::Migration
     create_table :lines do |t|
       t.integer :user_id
       t.integer :week_id
-      t.integer :game1
-      t.integer :game2
-      t.integer :game3
-      t.integer :game4
-      t.integer :game5
-      t.integer :game6
-      t.integer :game7
-      t.integer :game8
-      t.integer :game9
-      t.integer :game10
-      t.integer :game11
-      t.integer :game12
-      t.integer :game13
-      t.integer :game14
-      t.integer :game15
-      t.integer :game16
+      t.decimal :game1, :precision => 3, :scale => 1
+      t.decimal :game2, :precision => 3, :scale => 1
+      t.decimal :game3, :precision => 3, :scale => 1
+      t.decimal :game4, :precision => 3, :scale => 1
+      t.decimal :game5, :precision => 3, :scale => 1
+      t.decimal :game6, :precision => 3, :scale => 1
+      t.decimal :game7, :precision => 3, :scale => 1
+      t.decimal :game8, :precision => 3, :scale => 1
+      t.decimal :game9, :precision => 3, :scale => 1
+      t.decimal :game10, :precision => 3, :scale => 1
+      t.decimal :game11, :precision => 3, :scale => 1
+      t.decimal :game12, :precision => 3, :scale => 1
+      t.decimal :game13, :precision => 3, :scale => 1
+      t.decimal :game14, :precision => 3, :scale => 1
+      t.decimal :game15, :precision => 3, :scale => 1
+      t.decimal :game16, :precision => 3, :scale => 1
 
       t.timestamps
     end

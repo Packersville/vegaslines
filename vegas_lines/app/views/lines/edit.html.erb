@@ -16,7 +16,11 @@
       <td class='away_team'><%= get_team_name(game.away_team_id) %></td>
       <td class='vs_label'> vs. </td>
       <td class='home_team'><%= get_team_name(game.home_team_id) %></td>
-      <td class='time'><%= Time.parse(game.time).strftime("%l:%M %p") %></td>
+      <td class='time'>
+	<% if game.time.nil? == false %>
+	  <%= Time.parse(game.time).strftime("%l:%M %p") %>
+	<% end %>
+      </td>
       <td class='spread_td'><%= f.text_field "game#{index+1}".to_sym, :class => 'spread_field' %></td>
     </tr>
   <% end %>

@@ -9,7 +9,7 @@ class Week < ActiveRecord::Base
   
   protected
   def create_games
-    if self.id != 1
+    if self.id != 1 # testing purposes
       16.times {self.games.build}
       games.each_with_index do |game, index|
 	game.index = index+1
