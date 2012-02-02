@@ -21,11 +21,7 @@ $(document).ready(function() {
       $(this).children().css('background', '#eaf4fd');
     },
     function() { 
-    var index = $(this).children('td').parent().parent().children().index($(this));
-    if ( index%2 == 0)
       $(this).children().css('background', 'white');
-    else
-      $(this).children().css('background', '#e5ecf9');
     }
   );
 

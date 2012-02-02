@@ -8,6 +8,9 @@
  *= require jquery-ui-1.8.17.custom
 */
 
+body {
+  background-color: #4B7399;
+}
 #container {
   width: 50%;
   margin: 0 auto;
@@ -23,5 +26,8 @@
 .links{
   padding-top:20px;
 }
-
+.alert{
+  font-size:x-large;
+  color:red;
+}
 

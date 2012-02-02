@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     year = Year.find_by_year(Date.today.year)
     if year.nil? == true && current_user.admin == true
+      flash[:alert] = "Create a year"
       return years_path
     elsif year.nil? == false
       week_ids = year.weeks.collect { |x| x.id }
