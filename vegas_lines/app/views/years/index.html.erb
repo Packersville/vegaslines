@@ -16,5 +16,8 @@
   </table>
 </div>
 <div class="links">
-   <%= link_to "User Index", user_path(current_user) %> | <%= link_to 'New Season', new_year_path %>
+  <%= link_to "User Index", user_path(current_user) %>
+  <% if current_user.admin? %>
+    | <%= link_to 'New Season', new_year_path %>
+  <% end %>
 </div>

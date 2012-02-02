@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+  
   def after_sign_in_path_for(resource)
     year = Year.find_by_year(Date.today.year)
-    if year.nil? == true
+    if year.nil? == true && current_user.admin == true
       return years_path
     elsif year.nil? == false
       week_ids = year.weeks.collect { |x| x.id }

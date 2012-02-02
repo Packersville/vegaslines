@@ -1,4 +1,5 @@
 class LinesController < ApplicationController
+  load_and_authorize_resource
   before_filter :get_current_year
   
   def edit
