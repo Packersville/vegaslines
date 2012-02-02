@@ -12,5 +12,5 @@ VegasLines::Application.routes.draw do
     resources :lines, :only => [:edit, :update]
   end
   
-  root :to => "devise/sessions#new"
+  root :to => "user#show"
 end
