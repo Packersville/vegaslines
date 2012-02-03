@@ -48,7 +48,7 @@ class Week < ActiveRecord::Base
     self.games.each do |game|
       if game.date.nil? == false
 	if (game.date <= self.start_date || game.date > self.start_date+6) && valid == true
-	  self.errors.add(:base, "Game's date is invalid.")
+	  self.errors.add(:base, "Game date is invalid.")
 	  valid = false
 	end
       end

@@ -6,7 +6,7 @@ class Year < ActiveRecord::Base
   protected
   def create_weeks
     year = Year.last
-    next_date = (year.start_date+2).to_s
+    next_date = (year.start_date+5).to_s
     17.times {self.weeks.build}
     self.weeks.each_with_index do |week, index|
       if index == 0
