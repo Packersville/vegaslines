@@ -1,0 +1,31 @@
+<h1 id='lines_header'> <%= "Week #{@week.id} Lines" %> </h1>
+
+<%= form_for @offical_lines, :url => week_offical_line_path(@week,params[:id]), :method => :put do |f| %>
+  <table id='lines_edit_table'>
+    <tr>
+      <td></td>
+      <td>Away</td>
+      <td></td>
+      <td>Home</td>
+      <td class='time'>Time</td>
+      <td class='spread_td'>Spread</td>
+    </tr>
+  <% @games.each_with_index do |game, index| %>
+    <tr>
+      <td><%= label_tag :game, "Game #{game.index}", :class => 'game_label' %></td>
+      <td class='away_team'><%= get_team_name(game.away_team_id) %></td>
+      <td class='vs_label'> vs. </td>
+      <td class='home_team'><%= get_team_name(game.home_team_id) %></td>
+      <td class='time'>
+	<% if game.time.nil? == false %>
+	  <%= Time.parse(game.time).strftime("%l:%M %p") %>
+	<% end %>
+      </td>
+      <td class='spread_td'><%= f.text_field "game#{index+1}".to_sym, :class => 'spread_field' %></td>
+    </tr>
+  <% end %>
+  </table>
+  <div class="actions">
+   <%= f.submit %>
+  </div>
+<% end %>

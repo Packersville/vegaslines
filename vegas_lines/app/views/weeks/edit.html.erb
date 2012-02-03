@@ -15,5 +15,8 @@
       <%= render "game_fields", :f => f2 %>
     <% end %>
   </table>
+  <% if current_user.admin == true %>
+    <%= link_to "Week's Offical Lines", edit_week_offical_line_path(@week, @offical_lines) %> |
+  <% end %>
   <%= link_to "Week Index", year_weeks_path(@year, @week) %> | <%= f.submit %>
 <% end %>

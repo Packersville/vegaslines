@@ -10,6 +10,7 @@ VegasLines::Application.routes.draw do
   
   resources :weeks, :only => [:index, :edit, :update] do
     resources :lines, :only => [:edit, :update]
+    resources :offical_lines, :only => [:edit, :update]
   end
   
   root :to => "user#show"

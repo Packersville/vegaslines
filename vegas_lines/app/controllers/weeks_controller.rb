@@ -1,5 +1,6 @@
 class WeeksController < ApplicationController
-
+  load_and_authorize_resource
+  
   def index
     @year = Year.find(params[:year_id])
     @weeks = @year.weeks
@@ -11,6 +12,7 @@ class WeeksController < ApplicationController
     @week = Week.find(params[:id])
     @games = @week.games
     @teams = Team.find(:all, :order => "Name ASC")
+    @offical_lines = OfficalLine.find_by_week_id(@week)
   end
   
   def update
