@@ -6,6 +6,7 @@ class Week < ActiveRecord::Base
   accepts_nested_attributes_for :games, :allow_destroy => true 
   
   validate :saved_games_unique
+  validate :saved_games_date_valid
   
   protected
   def create_games
@@ -41,4 +42,16 @@ class Week < ActiveRecord::Base
     self.errors.add(:base, "Duplicate team saved.")
   end
  end
+ 
+  def saved_games_date_valid
+    valid = true
+    self.games.each do |game|
+      if game.date.nil? == false
+	if (game.date <= self.start_date || game.date > self.start_date+6) && valid == true
+	  self.errors.add(:base, "Game's date is invalid.")
+	  valid = false
+	end
+      end
+    end
+  end
 end
