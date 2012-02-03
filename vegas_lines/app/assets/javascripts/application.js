@@ -33,10 +33,10 @@ $(document).ready(function() {
     butonImageOnly: true,
     dateFormat: "yy-mm-dd",
     onSelect: function(dateText, inst) {
-      if( $(this).attr("id") == $(".datepicker").first().attr("id")) {
+      if( $(this).attr("id") == $(".datepicker:eq(2)").attr("id")) {
 	$(".datepicker").each(function(index) {
-	  if( index < 15)
-	    $(this).val($(".datepicker").first().val());
+	  if(index > 2 && index < 15)
+	    $(this).val($(".datepicker:eq(2)").val());
 	});
       }
     }

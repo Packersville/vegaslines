@@ -47,9 +47,17 @@ class Week < ActiveRecord::Base
     valid = true
     self.games.each do |game|
       if game.date.nil? == false
-	if (game.date <= self.start_date || game.date > self.start_date+6) && valid == true
-	  self.errors.add(:base, "Game date is invalid.")
-	  valid = false
+	if self.week != 1 # first week of season starts on Thursday
+	  if (game.date >= self.start_date && game.date < self.start_date+7) && valid == true
+	    p "BAD"
+	    self.errors.add(:base, "Game date is invalid.")
+	    valid = false
+	  end
+	else
+	  if !(game.date >= self.start_date && game.date < self.start_date+5) && valid == true
+	    self.errors.add(:base, "Game date is invalid.")
+	    valid = false
+	  end
 	end
       end
     end
