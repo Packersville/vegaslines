@@ -22,7 +22,7 @@
 	  <%= Time.parse(game.time).strftime("%l:%M %p") %>
 	<% end %>
       </td>
-      <td class='spread_td'><%= f.text_field "game#{index+1}".to_sym, :class => 'spread_field' %></td>
+      <td class='spread_td'><%= f.text_field "game#{index+1}".to_sym, :class => 'spread_field', :autocomplete => :off  %></td>
     </tr>
   <% end %>
   </table>
