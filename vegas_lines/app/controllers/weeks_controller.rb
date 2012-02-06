@@ -12,7 +12,7 @@ class WeeksController < ApplicationController
     @week = Week.find(params[:id])
     @games = @week.games
     @teams = Team.find(:all, :order => "Name ASC")
-    @offical_lines = OfficalLine.find_by_week_id(@week)
+    @official_lines = OfficalLine.find_by_week_id(@week)
   end
   
   def update
