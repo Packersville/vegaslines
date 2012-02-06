@@ -18,3 +18,10 @@
 #creating_games_week_table{
   display:none;
 }
+.links_week_edit{
+  float:left;
+}
+.submit_week_edit{
+  float:right;
+  padding-bottom: 30px;
+}

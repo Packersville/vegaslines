@@ -15,8 +15,13 @@
       <%= render "game_fields", :f => f2 %>
     <% end %>
   </table>
-  <% if current_user.admin == true %>
-    <%= link_to "Week's Official Lines", edit_week_official_line_path(@week, @official_lines) %> |
-  <% end %>
-  <%= link_to "Week Index", year_weeks_path(@year, @week) %> | <%= f.submit %>
+  <div class='submit_week_edit'>
+    <%= f.submit %>
+  </div>
+  <div class='links_week_edit'>
+    <% if current_user.admin == true %>
+      <%= link_to "Week's Official Lines", edit_week_official_line_path(@week, @official_lines) %> |
+    <% end %>
+    <%= link_to "Week Index", year_weeks_path(@year, @week) %> 
+  </div>
 <% end %>
