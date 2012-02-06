@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120203203109) do
+ActiveRecord::Schema.define(:version => 20120206155615) do
 
   create_table "games", :force => true do |t|
     t.integer  "week_id"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20120203203109) do
     t.datetime "updated_at"
   end
 
-  create_table "offical_lines", :force => true do |t|
+  create_table "official_lines", :force => true do |t|
     t.integer  "week_id"
     t.string   "game1"
     t.string   "game2"

@@ -11,7 +11,7 @@ class OfficialLinesController < ApplicationController
     @official_lines = OfficialLine.find(params[:id])
     @week = Week.find(@official_lines.week_id)
     @games = @week.games
-    if @official_lines.update_attributes(params[:official_lines])
+    if @official_lines.update_attributes(params[:official_line])
       redirect_to edit_week_official_line_path(@week.id, @official_lines.id)
     else
       render "edit"

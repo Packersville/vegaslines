@@ -1,6 +1,7 @@
 <h1 id='lines_header'> <%= "Week #{@week.id} Lines" %> </h1>
 
 <%= form_for @official_lines, :url => week_official_line_path(@week,params[:id]), :method => :put do |f| %>
+  <%= f.error_messages %>
   <table id='lines_edit_table'>
     <tr>
       <td></td>

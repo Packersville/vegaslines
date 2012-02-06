@@ -12,7 +12,7 @@ class WeeksController < ApplicationController
     @week = Week.find(params[:id])
     @games = @week.games
     @teams = Team.find(:all, :order => "Name ASC")
-    @official_lines = OfficalLine.find_by_week_id(@week)
+    @official_lines = OfficialLine.find_by_week_id(@week)
   end
   
   def update
@@ -20,7 +20,6 @@ class WeeksController < ApplicationController
     @teams = Team.find(:all, :order => "Name ASC")
     @week = Week.find(params[:id])
     @games = @week.games
-    p params[:week]
     if @week.update_attributes(params[:week])
       redirect_to edit_year_week_path(@year.id, @week)
     else
